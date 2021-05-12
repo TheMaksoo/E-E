@@ -5,7 +5,7 @@
 <div class="reset-password-body">
 	<div class="container">
 		<div class="reset-password-form-container reset-password-container">
-			<form class="form-reset-password" action="includes/reset-request.inc.php" method="POST">
+			<form class="form-reset-password" action="includes/reset-password.inc.php" method="POST">
                 <?php
                     $selector = $_GET["selector"];
                     $validator = $_GET["validator"];
@@ -23,12 +23,13 @@
                             <input type="hidden" name= "validator" value="<?php echo $validator; ?>">
                             <input type="password" name="pwd" placeholder="New password...">
                             <input type="password" name="rpwd" placeholder="repeat New password...">
+                            <button type="submit" name="reset-password.inc">Reset Password</button>
                         </form>
                             <?php
                         }
                     }
                     ?>
-				<button type="submit" name="reset-password-submit">Reset Password</button>
+				
 			</form>
 		</div>
 	</div>

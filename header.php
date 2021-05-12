@@ -15,8 +15,12 @@
 				if (isset($_SESSION["useruid"])) {
 					echo "<a href='index.php'>Mainpage</a>";
 					echo "<a href='homepage.php'>home</a>";
-					echo "<a href='profile.php'>profile</a>";
+					echo "<a href='account.php'>account</a>";
+					if ($_SESSION["useruid"] === "TheMaksoo") {
+						echo "<a href='secret.homepage.php'>Big UwU</a>";
+					}
 					echo "<a href='includes/logout.inc.php'>logout</a>";
+					
 				}
 				else { 
 					echo "<a href='index.php'>Mainpage</a>";
@@ -26,3 +30,4 @@
 				
 			</div>
 		</div>
+	</body>

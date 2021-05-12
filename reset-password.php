@@ -11,6 +11,9 @@
 			if(isset($_GET["reset"])) {
 				if ($_GET["reset"] == "succes") {
 					echo "<h2>Email has been sent!</h2><br>";
+					include_once 'includes/reset-request.inc.php';
+					echo $_SESSION['url'];
+					
 				}
 				
 			}
@@ -23,6 +26,7 @@
 				<button type="submit" name="reset-request-submit">Reset Password</button>
 				<?php
 			}	
+			
 			?>
 				
 			</form>
@@ -30,15 +34,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	const signUpButton = document.getElementById('signUp');
 
-	const container = document.getElementById('container');
-
-	signUpButton.addEventListener('click', () => {
-		container.classList.add("right-panel-active");
-	});
-</script>
 
 <?php
 	include_once 'footer.php';

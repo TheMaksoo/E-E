@@ -3,7 +3,18 @@
 	?>	
 
 		<div class="loginbody">
+		<?php
+			if (isset($_GET["error"]) == "error") {
+				echo "<h2>Error!<br>Something went wrong, try again!</h2> ";
+			}	
+			else if (isset($_GET["error"]) == "resetsucces") {
+				echo "<h2>Password reset comeplete!<br>Try logging in again.</h2> ";
+			}
+			else if (isset($_GET["error"]) == "none") {		
+			}
+			?>
 		<div class="container" id="container">
+
 		<div class="form-container sign-up-container">
 			<form action="includes/signup.inc.php" method="POST">
 				<h1>Create Account</h1>
@@ -18,7 +29,7 @@
 				<input type="text" name="name" placeholder="Full Name...">
 				<input type="password" name="pwd" placeholder="Password...">
 				<input type="password" name="rpwd" placeholder="Repeat Password...">
-				<button type="submit" name="submit">Sign Up</button>
+				<button class= "normal" type="submit" name="submit">Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
@@ -44,7 +55,7 @@
 				<input type="text" name="uid" placeholder="Username/Email...">
 				<input type="password" name="password" placeholder="Password...">
 				<a href="reset-password.php">Forgot Your Password?</a>
-				<button type="submit" name="submit">Sign In</button>
+				<button class= "normal" type="submit" name="submit">Sign In</button>
 			</form>
 		</div>
 		<div class="overlay-container">
